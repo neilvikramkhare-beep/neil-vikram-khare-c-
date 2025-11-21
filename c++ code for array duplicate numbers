@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+std::vector<int> findElementsWithFrequencyTwo(const std::vector<int>& arr)
+ {
+    std::vector<int> ans;
+    std::unordered_map<int, int> mp;
+    for (int num : arr)
+     {
+        mp[num]++;
+    }
+    for (const auto& p : mp) 
+    {
+        if (p.second == 2) 
+        {
+            ans.push_back(p.first);
+        }
+    }
+    return ans;
+}
+int main()
+ {
+    int n;
+    std::cout << "Enter number of elements in the array: ";
+    std::cin >> n;
+    std::vector<int> arr(n);
+    std::cout << "Enter " << n << " integers:\n";
+    for (int i = 0; i < n; ++i)
+     {
+        std::cin >> arr[i];
+    }
+    std::vector<int> result = findElementsWithFrequencyTwo(arr);
+    std::cout << "Elements that appear exactly twice: ";
+    if (result.empty())
+     {
+        std::cout << "None";
+    } 
+    else 
+    {
+        for (int num : result)
+         {
+            std::cout << num << " ";
+        }
+    }
+    std::cout << std::endl;
+    return 0;
+}
