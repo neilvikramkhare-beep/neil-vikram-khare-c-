@@ -1,0 +1,48 @@
+#include <iostream>
+struct Node 
+{
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr)
+     {}
+};
+bool areIdentical(Node* head1, Node* head2)
+ {
+    Node* current1 = head1;
+    Node* current2 = head2;
+    while (current1 != nullptr && current2 != nullptr)
+     {
+        if (current1->data != current2->data) 
+        {
+            return false;
+        }
+        current1 = current1->next;
+        current2 = current2->next;
+    }
+    return (current1 == nullptr && current2 == nullptr);
+}
+int main() 
+{
+    Node* headA1 = new Node(1);
+    headA1->next = new Node(2);
+    headA1->next->next = new Node(3);
+    headA1->next->next->next = new Node(4);
+    headA1->next->next->next->next = new Node(5); headA1->next->next->next->next->next = new Node(6);
+    Node* headA2 = new Node(99);
+    headA2->next = new Node(58);
+    headA2->next->next = new Node(42);
+    headA2->next->next->next = new Node(20);
+    std::cout << "List A1 and A2 are identical: " << std::boolalpha << areIdentical(headA1, headA2) << std::endl;
+    Node* headB1 = new Node(1);
+    headB1->next = new Node(2);
+    headB1->next->next = new Node(3);
+    headB1->next->next->next = new Node(4);
+    headB1->next->next->next->next = new Node(5);
+    Node* headB2 = new Node(1);
+    headB2->next = new Node(2);
+    headB2->next->next = new Node(3);
+    headB2->next->next->next = new Node(4);
+    headB2->next->next->next->next = new Node(5);
+    std::cout << "List B1 and B2 are identical: " << std::boolalpha << areIdentical(headB1, headB2) << std::endl;
+    return 0;
+}
