@@ -1,0 +1,17 @@
+#include <iostream>
+#include<set>
+using namespace std;
+int main()
+{
+    set<int>s;
+    s.insert(10);
+    s.insert(20);
+    s.insert(10);
+    cout<<s.size()<<endl;
+    cout<<s.size()<<endl;
+    for(int i:s)
+    {
+        cout<<i<<" ";
+    }
+    return 0;
+}
