@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+template <typename T>
+struct Node {
+    T data;
+    Node* next;
+
+    Node(T val) : data(val), next(nullptr) {}
+};
+template <typename T>
+class LinkedListStack {
+private:
+    Node<T>* top;
+public:
+    LinkedListStack() : top(nullptr) {}
+    ~LinkedListStack() {
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+    void push(T val) {
+        Node<T>* newNode = new Node<T>(val);
+        newNode->next = top;
+        top = newNode;
+    }
+    T pop() {
+        if (isEmpty()) {
+            throw std::runtime_error("Stack is empty");
+        }
+        Node<T>* temp = top;
+        T val = temp->data;
+        top = top->next;
+        delete temp;
+        return val;
+    }
+    bool isEmpty() const {
+        return top == nullptr;
+    }
+    T peek() const {
+        if (isEmpty()) {
+            throw std::runtime_error("Stack is empty");
+        }
+        return top->data;
+    }
+};
+int main() {
+    LinkedListStack<std::string> undoStack;
+    LinkedListStack<std::string> redoStack;
+    std::string currentContent = ""; 
+    std::cout << "Simple Undo/Redo Text Editor (Type 'exit' to quit)" << std::endl;
+    std::cout << "Commands: 'add <text>', 'undo', 'redo', 'display'" << std::endl;
+    std::string command;
+    while (true) {
+        std::cout << "\nCurrent content: " << currentContent << std::endl;
+        std::cout << "> ";
+        std::getline(std::cin, command);
+        if (command == "exit") {
+            break;
+        } else if (command.rfind("add ", 0) == 0) { 
+            std::string textToAdd = command.substr(4);
+            undoStack.push(currentContent);
+            currentContent += textToAdd; 
+            while (!redoStack.isEmpty()) {
+                redoStack.pop(); 
+            }
+        } else if (command == "undo") {
+            if (!undoStack.isEmpty()) {
+                redoStack.push(currentContent); 
+                currentContent = undoStack.pop(); 
+            } else {
+                std::cout << "Nothing to undo." << std::endl;
+            }
+        } else if (command == "redo") {
+            if (!redoStack.isEmpty()) {
+                undoStack.push(currentContent); 
+                currentContent = redoStack.pop(); 
+            } else {
+                std::cout << "Nothing to redo." << std::endl;
+            }
+        } else if (command == "display") {
+            std::cout << "Current document content: " << currentContent << std::endl;
+        } else {
+            std::cout << "Invalid command." << std::endl;
+        }
+    }
+    return 0;
+}
