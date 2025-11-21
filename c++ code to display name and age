@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class school
+{
+string students[10];
+int age;
+string name;
+public:
+void getdata();
+void putdata();
+};
+void school::getdata();
+{
+    std::cout<<"enter name:";
+    std::cin>>name;
+    std::cout<<"enter age:";
+    std::cin>>age;
+    }
+    void school::putdata();
+    {
+        cout<<"name";
+        cout<<"age";
+        cout<<endl;
+        return 0;
+    }
+     
