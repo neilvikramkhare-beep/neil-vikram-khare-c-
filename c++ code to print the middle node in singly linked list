@@ -1,0 +1,44 @@
+#include <iostream>
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int count = 0;
+        for (ListNode* i = head; i != nullptr; i = i->next) {
+            count++;
+        }
+        int mid = count / 2;
+        ListNode* ptr = head;
+        for (int t = 0; t < mid; t++) { 
+            ptr = ptr->next;
+        }
+        return *ptr*;
+    }
+};
+int main() {
+    // Create a sample linked list: 1 -> 2 -> 3 -> 4 -> 5
+    ListNode* head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(4);
+    head->next->next->next->next = new ListNode(5);
+    Solution sol;
+    ListNode* middle = sol.middleNode(head);
+    if (middle != nullptr) {
+        std::cout << "The value of the middle node is: " << *middle*->val << std::endl; 
+    } else {
+        std::cout << "The list is empty." << std::endl;
+    }
+    delete head->next->next->next->next;
+    delete head->next->next->next;
+    delete head->next->next;
+    delete head->next;
+    delete head;
+    return 0;
+}
