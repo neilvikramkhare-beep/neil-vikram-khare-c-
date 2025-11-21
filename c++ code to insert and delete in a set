@@ -1,0 +1,47 @@
+#include <iostream>
+#include <set>
+using namespace std;
+set<int> setInsert(int arr[], int n)
+{
+    set<int> s;
+    for (int i = 0; i < n; i++)
+    {
+        s.insert(arr[i]);
+    }
+    return s;
+}
+void setDisplay(set<int>& s)
+{
+    for (int i : s) 
+    {
+        cout << i << " ";
+    }
+    cout << endl;  
+}
+void setErase(set<int>& s, int x)
+{
+    cout << endl;
+    if (s.find(x) != s.end())
+    {
+        s.erase(x);
+        cout << "erased " << x;
+    } 
+    else
+    {
+        cout << "~"; 
+    }
+    cout << endl;
+}
+int main()
+{
+    int arr[] = {5, 3, 9, 1, 5, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    set<int> s = setInsert(arr, n);
+    cout << "Set elements: ";
+    setDisplay(s);
+    setErase(s, 3);
+    cout << "Set after erase: ";
+    setDisplay(s);
+    setErase(s, 7);
+    return 0;
+}
