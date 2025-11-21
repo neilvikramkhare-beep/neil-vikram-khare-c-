@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class SYIT{
+    public:
+    int roll;
+    float percentage;
+    void getdata()
+    void putdata()
+    }s1;
+    void SYIT::getdata();
+    {
+        cout<<"enter your roll number:";
+        cin>>this->roll number;
+        cout<<"enter your percentage:";
+        cin>>this->percentage;
+    }
+    void SYIT::putdata();
+    {
+        cout<<"your roll number="<<this->roll<<endl;
+        cout<<"your percentage="<<this->percentage<<endl;
+    }
+    int main()
+    {
+    s1.getdata();
+    s1.putdata();
+    return 0;
+    }
