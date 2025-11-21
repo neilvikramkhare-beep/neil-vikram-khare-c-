@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cmath>   
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+class Solution {
+public:
+    int countNodes(ListNode* head) {
+        ListNode* i = head;
+        int count = 0;
+        while (i != NULL) {
+            count++;
+            i = i->next;
+        }
+        return count;
+    }
+    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
+        int length1 = countNodes(headA);
+        int length2 = countNodes(headB);
+        int gap = std::abs(length1 - length2);
+        ListNode* i = headA;
+        ListNode* j = headB;
+        if (length1 > length2) {
+            for (int t = 0; t < gap; t++) {
+                i = i->next;
+            }
+        } else {
+            for (int t = 0; t < gap; t++) {
+                j = j->next;
+            }
+        }
+        while (i != j) {
+            i = i->next;
+            j = j->next;
+        }
+        return i;
+    }
+};
+void printList(ListNode* head) {
+    while (head != NULL) {
+        std::cout << head->val << " -> ";
+        head = head->next;
+    }
+    std::cout << "NULL" << std::endl;
+}
+int main() {
+    ListNode* intersection_node = new ListNode(8);
+    intersection_node->next = new ListNode(4);
+    intersection_node->next->next = new ListNode(5);
+    ListNode* headA = new ListNode(4);
+    headA->next = new ListNode(1);
+    headA->next->next = intersection_node;
+    ListNode* headB = new ListNode(5);
+    headB->next = new ListNode(6);
+    headB->next->next = new ListNode(1);
+    headB->next->next->next = intersection_node; 
+    Solution sol;
+    ListNode* result = sol.getIntersectionNode(headA, headB);
+    if (result) {
+        std::cout << "Intersection found at node with value: " << result->val << std::endl; 
+    } else {
+        std::cout << "No intersection found." << std::endl;
+    }
+    return 0;
+}
