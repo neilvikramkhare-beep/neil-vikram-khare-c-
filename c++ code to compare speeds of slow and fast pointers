@@ -1,0 +1,41 @@
+#include <cstddef> 
+#include <iostream>
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    next(NULL)
+     {}
+};
+class Solution
+ {
+public:
+    int middleNodeValue(ListNode* head)
+     {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while (fast != NULL && fast->next != NULL)
+         {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow->val;
+    }
+};
+int main() 
+{
+   ListNode(1);
+    head1->next = new ListNode(2);
+    head1->next->next = new ListNode(3);
+    head1->next->next->next = new ListNode(4);
+    head1->next->next->next->next = new ListNode(5);
+    Solution sol;
+    std::cout << "Input 1 Middle Node Value: " << sol.middleNodeValue(head1) << std::endl; 
+    ListNode* head2 = new ListNode(2);
+    head2->next = new ListNode(4);
+    head2->next->next = new ListNode(6);
+    head2->next->next->next = new ListNode(7);
+    head2->next->next->next->next = new ListNode(5); head2->next->next->next->next->next = new ListNode(1);
+    std::cout << "Input 2 Middle Node Value: " << sol.middleNodeValue(head2) << std::endl; 
+    return 0;
+}
