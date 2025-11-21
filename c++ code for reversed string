@@ -1,0 +1,18 @@
+#include <string> 
+#include <iostream> 
+std::string reverseString(const std::string& s) {
+    std::string res = ""; 
+    for (int i = s.size() - 1; i >= 0; i--) {
+        res += s[i]; 
+    }
+    return res; 
+}
+int main() {
+    std::string original = "hello";
+    std::string reversed = reverseString(original);
+    std::cout << "Original string: " << original << std::endl;
+    std::cout << "Reversed string: " << reversed << std::endl; 
+    std::string another_string = "world";
+    std::cout << "Reversed 'world': " << reverseString(another_string) << std::endl; 
+    return 0;
+}
