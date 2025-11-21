@@ -1,0 +1,18 @@
+#include <iostream>
+#include<unordered_map>
+using namespace std;
+int main()
+ {
+    unordered_map<int,int>mp;
+    int arr[]={1,2,2,1,3,4,5,1,4,3};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n;i++)
+    {
+        mp[arr[i]]++;
+    }
+    for(pair<int,int> p :mp)
+    {
+         cout<<p.first<<" and "<<p.second<<endl;
+    }
+    return 0;
+}
