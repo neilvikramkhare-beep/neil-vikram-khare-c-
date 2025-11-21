@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+class Fish {
+public:
+    string name;
+    void getName() {
+        cout << "Enter the fish name: ";
+        cin >> name;
+    }
+};
+class WaterBody {
+public:
+    string waterbody;
+    void getWaterBody() {
+        cout << "Enter the waterbody: ";
+        cin >> waterbody;
+    }
+};
+class Size : public Fish, public WaterBody {
+public:
+    string colour;
+    void getColour() {
+        cout << "Enter the fish colour: ";
+        cin >> colour;
+    }
+    void displayData() {
+        cout << "\n--- Fish Details ---" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Waterbody: " << waterbody << endl;
+        cout << "Colour: " << colour << endl;
+    }
+};
+int main() {
+    Size s;
+    s.getName();
+    s.getWaterBody();
+    s.getColour();
+    s.displayData();
+    return 0;
+}
