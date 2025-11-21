@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cctype>
+#include <string>
+class Solution
+ {
+public:
+    int countCamelCaseWords(const std::string& s) {
+        int count = 0;
+        for (char c : s) {
+            if (isupper(c))
+             {
+                count++;
+            }
+        }
+        return count;
+    }
+};
+int main() 
+{
+    std::string input;
+    std::cout << "Enter a camelCase string: ";
+    std::cin >> input;
+    Solution sol;
+    int result = sol.countCamelCaseWords(input);
+    std::cout << "Number of camel case words (excluding the first lowercase word): " << result << std::endl;
+    return 0;
+}
