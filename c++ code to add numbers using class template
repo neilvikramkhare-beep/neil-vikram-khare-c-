@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+template<class T> class A
+{
+    public:
+    T num1=65;
+    T num2=76;
+    void add()
+    {
+        cout<<"addition of two numbers:"<<num1+num2;
+    }
+};
+int main()
+{
+    A<int>d;
+    d.add();
+    return 0;
+}
