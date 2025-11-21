@@ -1,0 +1,45 @@
+#include <iostream>
+#include <set>
+#include <algorithm> 
+#include <vector>    
+void printSet(const std::set<int>& s, const std::string& name) 
+{
+    std::cout << name << ": { ";
+    for (int val : s) {
+        std::cout << val << " ";
+    }
+    std::cout << "}" << std::endl;
+}
+
+int main()
+{
+    std::set<int> setA;
+    std::set<int> setB;
+    setA.insert(10);
+    setA.insert(20);
+    setA.insert(30);
+    setA.insert(40);
+    printSet(setA, "Set A after inserts");
+    setB.insert(30);
+    setB.insert(40);
+    setB.insert(50);
+    setB.insert(60);
+    printSet(setB, "Set B after inserts");
+    setA.erase(20); 
+    printSet(setA, "Set A after erasing 20");
+    std::cout << "Count of 30 in Set A: " << setA.count(30) << std::endl;
+    std::cout << "Count of 99 in Set A: " << setA.count(99) << std::endl;
+    std::set<int> setUnion;
+    std::set_union(setA.begin(), setA.end(), setB.begin(), setB.end(),std::inserter(setUnion, setUnion.begin()));
+    printSet(setUnion, "Union of Set A and Set B");
+    std::set<int> setIntersection;
+    std::set_intersection(setA.begin(), setA.end(), setB.begin(), setB.end(),std::inserter(setIntersection, setIntersection.begin()));
+    printSet(setIntersection, "Intersection of Set A and Set B");
+    std::set<int> setDifferenceAB;
+    std::set_difference(setA.begin(), setA.end(),setB.begin(), setB.end(),std::inserter(setDifferenceAB, setDifferenceAB.begin()));
+    printSet(setDifferenceAB, "Set Difference (A - B)");
+    std::set<int> setDifferenceBA;
+    std::set_difference(setB.begin(), setB.end(),setA.begin(), setA.end(),std::inserter(setDifferenceBA, setDifferenceBA.begin()));
+    printSet(setDifferenceBA, "Set Difference (B - A)");
+    return 0;
+}
