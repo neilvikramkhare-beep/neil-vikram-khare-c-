@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+std::string toUpperCase(const std::string& str) {
+    std::string ans = "";
+    for (int i = 0; i < str.size(); i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            ans += str[i] - 32; 
+        } else {
+            ans += str[i]; 
+        }
+    }
+    return ans;
+}
+int main()
+ {
+    std::string myString = "Hello World!";
+    std::string upperCaseString = toUpperCase(myString);
+    std::cout << "Original string: " << myString << std::endl;
+    std::cout << "Uppercase string: " << upperCaseString << std::endl;
+    myString = "GEMINI is awesome.";
+    upperCaseString = toUpperCase(myString);
+    std::cout << "Original string: " << myString << std::endl;
+    std::cout << "Uppercase string: " << upperCaseString << std::endl;
+    return 0;
+}
