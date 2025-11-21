@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm> 
+int cutRod(const std::vector<int>& price, int n) {
+    std::vector<int> dp(n + 1, 0);
+    for (int i = 1; i <= n; ++i) {
+        int max_val = 0;
+        for (int j = 0; j < i; ++j) {
+            max_val = std::max(max_val, price[j] + dp[i - (j + 1)]);
+        }
+        dp[i] = max_val;
+    }
+    return dp[n];
+}
+int main() {
+    std::vector<int> price = {1, 5, 8, 9, 10, 17, 17, 20};
+    int rod_length = 8;
+    int max_profit = cutRod(price, rod_length);
+    std::cout << "Maximum profit for a rod of length " << rod_length << " is: " << max_profit << std::endl;
+    std::vector<int> price2 = {2, 3, 5}; 
+    int rod_length2 = 5;
+    int max_profit2 = cutRod(price2, rod_length2);
+    std::cout << "Maximum profit for a rod of length " << rod_length2 << " is: " << max_profit2 << std::endl;
+    return 0;
+}
