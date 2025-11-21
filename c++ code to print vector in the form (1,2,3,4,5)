@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <numeric> 
+using namespace std;
+void printVectorFormatted(const vector<int>& vec) {
+cout << "(";
+    for (size_t i = 0; i < vec.size(); ++i) {
+        cout << vec[i];
+        if (i < vec.size() - 1) {
+            cout << ", ";
+        }
+    }
+cout << ")" << endl;
+}
+int main() {
+    std::vector<int> myVector1 = {1, 2, 3, 4, 5};
+    printVectorFormatted(myVector1);
+    std::vector<int> myVector2(7); 
+    std::iota(myVector2.begin(), myVector2.end(), 10); 
+    printVectorFormatted(myVector2);
+    std::vector<int> emptyVector;
+    printVectorFormatted(emptyVector);
+    return 0;
+}
