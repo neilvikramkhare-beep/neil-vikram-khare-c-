@@ -1,0 +1,75 @@
+#include <iostream>
+#include <vector>
+#include <algorithm> 
+int linearSearch(const std::vector<int>& arr, int target)
+ {
+    std::cout << "Linear Search Visualization" << std::endl;
+    for (int i = 0; i < arr.size(); ++i) {
+        std::cout <<"Checking index" << i << ": Element " << arr[i];
+        if (arr[i] == target) {
+            std::cout << " (Found!)" << std::endl;
+            return i; 
+        } else {
+            std::cout << " (Not a match)" << std::endl;
+        }
+    }
+    std::cout << "Target " << target << " not found in the array." << std::endl;
+    return -1; 
+}
+int binarySearch(const std::vector<int>& arr, int target)
+ {
+    std::cout << "Binary Search Visualization" << std::endl;
+    int low = 0;
+    int high = arr.size() - 1;
+    while (low <= high) 
+    {
+        int mid = low + (high - low) / 2; 
+        std::cout << "Current range: [" << low << ", " << high << "], Middle index: " << mid << ", Element: " << arr[mid] << std::endl;
+        if (arr[mid] == target) {
+            std::cout << "Target " << target << " found at index " << mid << std::endl;
+            return mid; 
+        } else if (arr[mid] < target) {
+            std::cout << "Target " << target << " is greater than " << arr[mid] << ". Searching in the right half." << std::endl;
+            low = mid + 1; 
+        } else {
+            std::cout << "Target " << target << " is smaller than " << arr[mid] << ". Searching in the left half." << std::endl;
+            high = mid - 1; 
+        }
+    }
+    std::cout << "Target " << target << " not found in the array." << std::endl;
+    return -1; 
+}
+int main() {
+    std::vector<int> numbers = {5, 12, 3, 9, 18, 1, 7, 15};
+    int target;
+    std::cout << "Original Array for Linear Search: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Enter target for Linear Search: ";
+    std::cin >> target;
+    int linearResult = linearSearch(numbers, target);
+    if (linearResult != -1) {
+        std::cout << "Linear Search: Target found at index " << linearResult << std::endl;
+    } else {
+        std::cout << "Linear Search: Target not found." << std::endl;
+    }
+    std::cout << std::endl;
+    std::sort(numbers.begin(), numbers.end()); 
+
+    std::cout << "Sorted Array for Binary Search: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Enter target for Binary Search: ";
+    std::cin >> target;
+    int binaryResult = binarySearch(numbers, target);
+    if (binaryResult != -1) {
+        std::cout << "Binary Search: Target found at index " << binaryResult << std::endl;
+    } else {
+        std::cout << "Binary Search: Target not found." << std::endl;
+    }
+    return 0;
+}
