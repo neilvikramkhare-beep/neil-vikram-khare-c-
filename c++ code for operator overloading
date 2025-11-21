@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+class Number
+{
+    public:
+    int x;
+    int y;
+    int z;
+    void getdata(int a,int b,int c);
+    void putdata();
+    void operator-();
+};
+void Number::getdata(int a,int b,int c)
+{
+    x=a;
+    y=b;
+    z=c;
+}
+void Number::putdata()
+{
+    cout<<"x="<<x<<endl;
+    cout<<"y="<<y<<endl;
+    cout<<"z="<<z<<endl;
+}
+void Number::operator-()
+{
+    x=-x;
+    y=-y;
+    z=-z;
+}
+    int main() {
+        Number n;
+        cout<<"data members of number:\n";
+        n.getdata(53,76,43);
+        n.putdata();
+        cout<<"data members after overloading:\n";
+        -n;
+        n.putdata();
+        return 0;
+    }
