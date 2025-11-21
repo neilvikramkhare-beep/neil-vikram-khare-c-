@@ -1,0 +1,28 @@
+#include<iostream>
+#include<string> 
+using namespace std;
+class person{
+public:
+    string name;
+    int age;
+    person(string n, int a) { 
+        name = n;
+        age = a;
+        cout << name << " and " << age << endl; 
+    }
+    void eats() {
+        cout << name << " eats food." << endl; 
+    }
+    void sleeps() {
+        cout << name << " sleeps." << endl; 
+    }
+};
+int main() {
+    person* p1 = new person("gana", 54); 
+    p1->eats();
+    person* p2 = new person("suyash", 78);
+    p2->sleeps(); 
+    delete p1;
+    delete p2;
+    return 0;
+}
