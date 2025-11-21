@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <cmath> 
+std::pair<int, int> findRepeatingAndMissing(std::vector<int>& arr) {
+    int repeating = -1;
+    int missing = -1;
+    int n = arr.size();
+    for (int i = 0; i < n; ++i) {
+        int val = std::abs(arr[i]); 
+        if (arr[val - 1] > 0) {
+            arr[val - 1] = -arr[val - 1]; 
+        } else {
+            repeating = val; 
+        }
+    }
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] > 0) {
+            missing = i + 1; 
+            break;
+        }
+    }
+    return {repeating, missing};
+}
+int main() 
+{
+    std::vector<int> arr = {3, 1, 2, 5, 4, 6, 7, 5};
+    std::pair<int, int> result = findRepeatingAndMissing(arr);
+    std::cout << "Repeating number: " << result.first << std::endl;
+    std::cout << "Missing number: " << result.second << std::endl;
+    std::vector<int> arr2 = {1, 2, 2, 4}; 
+    result = findRepeatingAndMissing(arr2);
+    std::cout << "\nRepeating number: " << result.first << std::endl;
+    std::cout << "Missing number: " << result.second << std::endl;
+    return 0;
+}
