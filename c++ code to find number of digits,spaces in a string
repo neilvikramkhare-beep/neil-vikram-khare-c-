@@ -1,0 +1,25 @@
+#include <iostream>
+#include<sstream>
+#include<cctype>
+#include<string>
+int main()
+{
+    std::string fileContent="vdcd jdgcj7 67bvj76t56ch jsdjhdg";
+    std::istringstream inputFile(fileContent);
+    int countDigits=0;
+    int countSpaces=0;
+    char ch;
+    while(inputFile.get(ch))
+    {
+        if(std::isdigit(ch))
+        {
+            countDigits++;
+        }
+        else if(ch==' ')
+        {
+            countSpaces++;
+        }
+    }
+    std::cout<<"Digits:"<<countDigits<<"\nSpaces:"<<countSpaces<<std::endl;
+    return 0;
+}
