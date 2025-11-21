@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class college{
+    int roll number;
+    string name;
+    string post;
+    string course;
+    public:
+    college()
+    {
+        course="computer engineering";
+        void input();
+        {
+            cout<<"enter a roll number:";
+            cin>>roll number;
+            cout<<"enter a name:";
+            cin>>name;
+            cout<<"enter a post:";
+            cin>>post;
+        }
+        void dispaly();
+        {
+            cout<<"roll number:"<<roll number<<endl;
+            cout<<"name:"<<name<<endl;
+            cout<<"post:"<<post<<endl;
+        };
+        int main()
+        {
+            college students[2];
+            for(int i=0;i<2;i++)
+            {
+                cout<<"enter details for student:"<<i+1<<"\n";
+                students[i].input();
+                cout<<endl;
+            }
+            cout<<"student details:\n";
+            for(int i=0;i<2;i++)
+        }
+        students[i].display();
+        cout<<endl;
+        students[i].display();
+        students[i].input();
+    }
+    return 0;
+}
