@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class Book
+{
+    public:
+    int price;
+    int pages;
+    void displaydata()
+    {
+        cout<<"Price:"<<price<<endl;
+        cout<<"Pages:"<<pages<<endl;
+    }
+};
+int main()
+{
+    Book myBook;
+    myBook.price=180;
+    myBook.pages;780;
+    myBook.displaydata();
+    Book anotherBook;
+    anotherBook.price=320;
+    anotherBook.pages=690;
+    anotherBook.displaydata();
+    cout<<"\n Data for another book:"<<endl;
+    anotherBook.displaydata();
+    if(myBook.price>anotherBook.price)
+    {
+        cout<<"myBook"<<endl;
+    }
+    else
+    {
+        cout<<"anotherBook"<<endl;
+    }
+    return 0;
+}
