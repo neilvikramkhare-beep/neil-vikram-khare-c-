@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <numeric> 
+using namespace std;
+void multiplyVectorByScalar(vector<double>& vec, double scalar) {
+    for (double& element : vec) { 
+        element *= scalar;
+    }
+}
+int main() {
+vector<double> myVector = {1,2,3,4,5};
+    double scalarValue = 2.0;
+    cout << "Original vector: ";
+    for (double val : myVector) {
+        cout << val << " ";
+    }
+    cout << endl;
+    multiplyVectorByScalar(myVector, scalarValue);
+    cout << "Vector after multiplication by " << scalarValue << ": ";
+    for (double val : myVector) {
+        cout << val << " ";
+    }
+    cout <<endl;
+    return 0;
+}
