@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class Food {
+protected:
+    string name;
+public:
+    void getName() {
+        cout << "Enter the name of the food: ";
+        cin >> name;
+    }
+    void displayName() {
+        cout << "Food Name: " << name << endl;
+    }
+};
+class Shop : public Food {
+protected:
+    string shopName;
+public:
+    void getShopName() {
+        cout << "Enter the name of the shop: ";
+        cin >> shopName;
+    }
+    void displayShopName() {
+        cout << "Shop Name: " << shopName << endl;
+    }
+};
+class Location : public Shop {
+protected:
+    string location;
+public:
+    void getLocation() {
+        cout << "Enter the name of the location: ";
+        cin >> location;
+    }
+    void displayLocation() {
+        cout << "Location: " << location << endl;
+    }
+};
+int main() {
+    Location l;
+    l.getName();
+    l.getShopName();
+    l.getLocation();
+    cout <<"\nDetails"<< endl;
+    l.displayName();
+    l.displayShopName();
+    l.displayLocation();
+    return 0;
+}
