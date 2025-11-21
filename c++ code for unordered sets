@@ -1,0 +1,20 @@
+#include <iostream>
+#include<unordered_set>
+#include<set>
+using namespace std;
+int main()
+ {
+ unordered_set<int>s;
+    s.insert(10);
+    s.insert(20);
+    s.insert(10);
+    cout<<s.size()<<endl;
+     s.clear();
+     s.erase(10);
+    cout<<s.size()<<endl;
+    for(int i:s)
+    {
+        cout<<i<<" ";
+    }
+    return 0;
+}
