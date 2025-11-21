@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class Employee
+{
+public:
+    int sal1;
+public:
+    void setData(int s) 
+    {
+        sal1 = s;
+    }
+};
+class Employee2
+{
+private:
+    int sal2;
+public:
+    void setData(int s)
+    {
+        sal2 = s;
+    }
+    friend void add(Employee, Employee2);
+};
+void add(Employee e1, Employee2 e2) 
+{
+    cout << "Total salary of 2 employees: " << e1.sal1 + e2.sal2 << endl;
+}
+int main()
+{
+    Employee e1;
+    Employee2 e2;
+    e1.setData(65000);
+    e2.setData(62000);
+    add(e1, e2);
+    return 0;
+}
