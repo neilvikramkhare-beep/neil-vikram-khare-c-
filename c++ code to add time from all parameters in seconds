@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std:
+int main()
+{
+    public:
+    int hours;
+    int seconds;
+    int minutes;
+    std::cout<<"enter hours:";
+    std::cin>>hours;
+    {
+    std::cout<<"enter seconds:";
+    std::cin>>seconds;
+    }
+    std::cout<<"enter minutes:";{
+    std::cin>>minutes;
+    }
+    total seconds=hours*3600+minutes*60+seconds;
+    std::cout<<"total seconds:"<<total seconds<<std::endl;
+    return 0;
+}
