@@ -1,0 +1,15 @@
+#include <iostream>
+#include <set> 
+int main() 
+{
+    std::set<int> mySet;
+    mySet.insert(10);
+    mySet.insert(20);
+    mySet.insert(30);
+    mySet.insert(10); 
+    size_t setSize = mySet.size();
+    std::cout << "Size of the set: " << setSize << std::endl;
+    mySet.erase(20);
+    std::cout << "Size of the set after erasing 20: " << mySet.size() << std::endl;
+    return 0;
+}
