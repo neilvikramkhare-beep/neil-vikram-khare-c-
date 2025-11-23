@@ -1,0 +1,61 @@
+#include <iostream>
+struct Node 
+{
+    int data;
+    Node *left;
+    Node *right;
+    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+};
+void preorderTraversal(Node* node)
+{
+    if (node == nullptr) 
+    {
+        return;
+    }
+    std::cout << node->data << " "; 
+    preorderTraversal(node->left);   
+    preorderTraversal(node->right); 
+}
+void inorderTraversal(Node* node)
+{
+    if (node == nullptr) 
+    {
+        return;
+    }
+    inorderTraversal(node->left);   
+    std::cout << node->data << " "; 
+    inorderTraversal(node->right);  
+}
+void postorderTraversal(Node* node) 
+{
+    if (node == nullptr) 
+    {
+        return;
+    }
+    postorderTraversal(node->left);   
+    postorderTraversal(node->right); 
+    std::cout << node->data << " "; 
+}
+int main() 
+{
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    std::cout << "Preorder Traversal: ";
+    preorderTraversal(root);
+    std::cout << std::endl;
+    std::cout << "Inorder Traversal: ";
+    inorderTraversal(root);
+    std::cout << std::endl;
+    std::cout << "Postorder Traversal: ";
+    postorderTraversal(root);
+    std::cout << std::endl;
+    delete root->left->left;
+    delete root->left->right;
+    delete root->left;
+    delete root->right;
+    delete root;
+    return 0;
+}
