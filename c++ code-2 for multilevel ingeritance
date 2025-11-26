@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class Vehicle
+{
+    public:
+    void v()
+    {
+        cout<<"This is a vehicle."<<endl;
+    }
+};
+class Car:public Vehicle
+{
+    protected:
+    string name;
+    public:
+    void c()
+    {
+        cout<<"This will state car specification."<<endl;
+        cout<<"enter car name:"<<endl;
+        cin>>name;
+    }
+};
+class Speed:public Car
+{
+    int d;
+    int t;
+    double s;
+    public:
+    void get()
+    {
+        cout<<"enter the distance and time:"<<endl;
+        cin>>d>>t;
+    }
+    void calc()
+    {
+        s=d/t;
+    }
+    void display()
+    {
+        cout<<"car details."<<endl;
+        cout<<"Name:"<<name<<endl;
+        cout<<"Speed:"<<s<<endl;
+        cout<<endl;
+    }
+};
+int main()
+{
+    Speed s1;
+    s1.v();
+    s1.c();
+    s1.get();
+    s1.calc();
+    s1.display();
+    return 0;
+}
