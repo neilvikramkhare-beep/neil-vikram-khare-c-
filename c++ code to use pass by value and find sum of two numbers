@@ -1,0 +1,28 @@
+#include <iostream> 
+using namespace std; 
+class add 
+{ 
+    int x; 
+    int result; 
+public: 
+    int getdata(); 
+    void sum(add,add); 
+}a1,a2,a3; 
+int add::getdata()
+{ 
+    cout<<"enter your roll number:"; 
+    cin>>x; 
+    return 0; 
+} 
+void add::sum(add a1, add a2) 
+{ 
+    result=a1.x+a2.x; 
+    cout<<"Addition:"<<result << endl; 
+} 
+int main() 
+{ 
+    a1.getdata(); 
+    a2.getdata(); 
+    a3.sum(a1,a2); 
+    return 0; 
+}
