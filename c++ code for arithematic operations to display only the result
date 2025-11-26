@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int a=87;
+    int b=54;
+    int sum=a+b;
+    int div=a/b;
+    int prod=a*b;
+    int sub=a-b;
+    cout<<sum<<endl;
+    cout<<div<<endl;
+    cout<<prod<<endl;
+    cout<<sub<<endl;
+    return 0;
+}
