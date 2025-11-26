@@ -1,1 +1,24 @@
-
+#include <iostream> 
+using namespace std; 
+class circle 
+{ 
+public: 
+    double radius; 
+    double computeArea() 
+    { 
+        return 3.14 * radius * radius; 
+    } 
+    double computeSemiCircleArea()
+    { 
+        return 0.5 * 3.14 * radius * radius; 
+    } 
+}; 
+int main() 
+{ 
+    circle c; 
+    c.radius = 78; 
+    cout << "Radius: " << c.radius << endl; 
+    cout << "Area: " << c.computeArea() << endl; 
+    cout << "Semi-Circle Area: " << c.computeSemiCircleArea() << endl; 
+    return 0; 
+}
