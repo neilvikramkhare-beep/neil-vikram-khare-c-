@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class SYIT
+{
+    private:
+    int roll;
+    char name[20];
+    public:
+    void getdata();
+    void putdata();
+}s1;
+void SYIT::getdata()
+{
+    cout<<"enter the name;"<<endl;
+    cin>>name;
+    cout<<"enter the roll number:"<<endl;
+    cin>>roll;
+    }
+    void SYIT::putdata()
+    {
+        this->getdata();
+        cout<<"Name:"<<name<<endl;
+        cout<<"Roll number:"<<roll<<endl;
+        }
+        int main()
+        {
+           SYIT s1;
+           s1.getdata();
+           s1.putdata();
+           return 0;
+        }
