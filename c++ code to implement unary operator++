@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+class Number
+{
+    public:
+    int n;
+    Number(int n=0)
+    {
+        n=n;
+    }
+    void operator++()
+    {
+        n=n+1;
+    }
+    Number operator++(int)
+    {
+        Number temp(n);
+        n=n+1;
+        return temp;
+    }
+    void display()
+    {
+        cout<<"Value:"<<n;
+    }
+};
+int main()
+{
+    int x=5;
+    Number n(x);
+    cout<<"\n Original value:\n";
+    n.display();
+    ++n;
+    cout<<"\nAfter pre-incrementation:\n";
+    n.display();
+    n++;
+    cout<<"\nAfter post-incrementation:\n";
+    n.display();
+   return 0;
+}
