@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class Account
+{
+private:
+int account number;
+double balance;
+public:
+void getdata()
+{
+cout << "Enter account number: ";
+cin >> account number;
+cout << "Enter balance: ";
+cin >> balance;
+}
+void calculateinterest()
+{
+if (balance >= 5000)
+{
+balance = balance + (balance * 0.10);
+}
+}
+void displaydata()
+{
+cout <<fixed;
+cout << "Account Number: " << account_number << ", Balance: " << balance <<endl;
+}
+};
+int main() 
+{
+    int i;
+Account Accounts[i];
+cout << "Enter data for 10 accounts:" <<endl;
+for (int i = 0; i < 10; ++i) 
+{
+cout << "Account " << i + 1 <<endl;
+Accounts[i].getdata();
+}
+for (int i = 0; i < 10; ++i)
+{
+Accounts[i].calculateinterest();
+}
+cout << "\nAccount details after interest calculation:" << endl;
+for (int i = 0; i < 10; ++i)
+{
+Accounts[i].displaydata();
+}
+return 0;
+}
