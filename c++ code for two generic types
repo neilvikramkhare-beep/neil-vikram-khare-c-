@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+template<class A,class B>
+void myfunction(A a,B b) 
+{
+    cout<<a<<""<<b<<"\n";
+}
+int main()
+{
+    myfunction(28,"My name is neil");
+    myfunction(65,"Sara is my sister");
+    return 0;
+}
