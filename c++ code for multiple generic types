@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+template<class Type1,class Type2>class generic
+{
+   Type1 i;
+   Type2 j;
+   public:
+   generic(Type1 a,Type2 b)
+   {
+       i=a;
+       j=b;
+   }
+   void show()
+   {
+       cout<<"\n"<<i<<"\n"<<j;
+   }
+};
+int main()
+{
+    generic<int,double>g1(55,2.3);
+    generic<float,char>g2(65.7,'d');
+    generic<char,int>g3('h',54);
+    g1.show();
+    g2.show();
+    g3.show();
+    return 0;
+}
