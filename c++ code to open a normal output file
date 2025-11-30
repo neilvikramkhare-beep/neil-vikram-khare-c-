@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include <string> 
+using namespace std; 
+int main() 
+{
+    ofstream out("test.txt", ios::app);
+    if (!out)
+    {
+        cerr << "Error: cannot open file for writing." << endl;
+        return 1; 
+    }
+    out << "welcome to file operations" << endl;
+    out << "my name is neil" << endl;
+    out.close(); 
+    ifstream in("test.txt");
+    if (!in)
+    {
+        cerr << "\nError: cannot open the file for reading." << endl;
+        return 1;
+    }
+    string str;
+    while (getline(in, str)) 
+    {
+        cout << str << "\n";
+    }
+    in.close(); 
+return 0;
+}
