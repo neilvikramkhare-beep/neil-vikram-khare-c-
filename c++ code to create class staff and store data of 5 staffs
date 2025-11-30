@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string> 
+using namespace std;
+class staff
+{
+    private:
+    char name[50];
+    char post[50]; 
+    public:
+    void input()
+    {
+        cout<<"Enter names of staff:\n"; 
+        cin>>name;
+        cout<<"\nEnter the post of staff:\n"; 
+        cin>>post;
+        cout<<endl;
+    }
+void putdata()
+{
+    cout<<"Name:"<<name<<endl;
+    cout<<"Post:"<<post<<endl; 
+}
+};
+int main()
+{
+    staff s[5];
+    int i,n;
+    cout<<"Enter number of staffs:\n";
+    cin>>n;
+    if(n=5||n<1)
+    n = 5; 
+    for(i=0;i<n;i++)
+    {
+        s[i].input();
+    }
+    cout<<"Staff data:"<<endl; 
+    for(i=0;i<n;i++)
+    {
+        s[i].putdata();
+    }
+    return 0;
+}
