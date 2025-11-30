@@ -1,0 +1,18 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream out;
+    out.open("test.txt");
+    if(!out)
+    {
+        cout<<"cannot open file.\n";
+        return 1;
+    }
+    out<<"hsdghks"<<27.23<<endl;
+    out<<"yweuey"<<73.62<<endl;
+    out<<"dhhdwhhedw"<<72.13<<endl;
+    out.close();
+    return 0;
+}
