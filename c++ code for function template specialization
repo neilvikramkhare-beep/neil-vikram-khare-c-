@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+template<class T>void function(T a)
+{
+    cout<<"the main template function():"<<a<<endl;
+}
+template<>void function(int a)
+{
+    cout<<"the template for integer type:"<<a<<endl;
+}
+int main()
+{
+    function('a');
+    function(65);
+    function(3.5);
+    return 0;
+}
