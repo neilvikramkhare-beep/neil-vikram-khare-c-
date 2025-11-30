@@ -1,0 +1,19 @@
+#include <iostream>
+template<class X>
+void display(X a, X b) 
+{
+    cout << "\n value of first variable: " << a;
+    cout << "\n value of second variable: " << b << endl; 
+}
+int main()
+{
+    int i = 4;
+    int j = 5;
+    float m = 7.5;
+    float n = 6.5;
+    cout << "Displaying integers:";
+    display(i, j);
+    cout << "\nDisplaying floats:";
+    display(m, n);
+    return 0;
+}
