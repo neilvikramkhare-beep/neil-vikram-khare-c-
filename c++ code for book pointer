@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class Book
+{
+    public:
+    string title;
+    string author;
+    double price;
+    void acceptdata()
+    {
+        cout<<"\nenter book title:";
+        cin>>title;
+        cout<<"\nenter book author:";
+        cin>>author;
+        cout<<"\nenter book price:";
+        cin>>price;
+    }
+    void displaydata()
+    {
+        cout<<"\nBook details:"<<endl;
+        cout<<"Title:\n"<<title<<endl;
+        cout<<"Author name:\n"<<author<<endl;
+        cout<<"Price:\n"<<price<<endl;
+         }
+};
+int main()
+{
+    Book myBook;
+    Book*Bookptr=&myBook;
+    cout<<"enter book details:\n";
+    Bookptr->acceptdata();
+    Bookptr->displaydata();
+     
+    return 0;
+}
