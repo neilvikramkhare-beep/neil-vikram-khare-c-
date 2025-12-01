@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <list>
+class Solution {
+public:
+    std::vector<int> bfs(int V, std::vector<int> adj[]) {
+        std::vector<int> ans;
+        std::queue<int> q;
+        std::vector<int> visited(V, 0); 
+        q.push(0);
+        visited[0] = 1;
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+            ans.push_back(node);
+            for (int neighbour : adj[node]) {
+                if (!visited[neighbour]){
+                    q.push(neighbour);
+                    visited[neighbour] = 1;
+                }
+            }
+        }
+        return ans;
+    }
+};
+int main() {
+    int V = 5;
+    std::vector<int> adj[V];
+    adj[0].push_back(1);
+    adj[0].push_back(2);
+    adj[1].push_back(3);
+    adj[2].push_back(4);
+    Solution sol;
+    std::vector<int> result = sol.bfs(V, adj);
+    std::cout << "BFS Traversal: ";
+    for (int node : result) {
+        std::cout << node << " ";
+    }
+    std::cout << std::endl;
+    return 0;
+}
