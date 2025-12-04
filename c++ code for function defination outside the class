@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+class SYIT 
+{
+    private:
+    int rollno;
+    public:
+    void getdata();
+}x;
+void SYIT::getdata()
+{
+    cout<<"enter your roll number:";
+    cin>>rollno;
+}
+int main()
+{
+    SYIT s1;
+    s1.getdata();
+    return 0;
+}
