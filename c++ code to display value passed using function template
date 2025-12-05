@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+template<class X>void display(X&a,X&b)
+{
+    cout<<"\nValue of variable-1:"<<a;
+    cout<<"\nValue of variabe-2:"<<b;
+}
+int main()
+{
+    int i=72;
+    int j=76;
+    float m=56.54;
+    float n=65.43;
+    display(i,j);
+    display(m,n);
+    return 0;
+}
