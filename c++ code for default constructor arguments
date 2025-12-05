@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class student
+{
+    public:
+    int roll;
+    int roll2;
+    student(int x=12,int y=91)
+    {
+        roll=x;
+        roll2=y;
+    }
+    void display()
+    {
+        cout<<"Roll number:"<<roll<<endl;
+        cout<<"Roll number-2:"<<roll2<<endl;
+    }
+};
+int main()
+{
+    student s1;
+    student s2(43,67);
+    cout<<"output using default constructor arguments:\n";
+    s1.display();
+    cout<<"output without default constructor arguments:\n";
+    s2.display();
+    return 0;
+}
+        
