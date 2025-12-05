@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class father
+{
+    protected:
+    int a=76;
+    int b=54;
+    int c=a+b;
+    public:
+    void setabc(int i,int j,int k)
+    {
+        a=i;
+        b=j;
+        c=k;
+    }
+    void showab()
+    {
+        cout<<"\nA="<<a<<"\tB="<<b<<endl;
+        c=a+b;
+        cout<<"\nC="<<c<<endl;
+    }
+};
+class mother:protected father
+{
+    int c;
+    int a=53;
+    int b=78;
+    public:
+    void setc()
+    {
+        c=a*b;
+    }
+    void showall()
+    {
+        showab();
+        cout<<"\nC="<<c;
+}
+};
+int main()
+{
+    mother m;
+    m.setc();
+    m.showall();
+    return 0;
+}
