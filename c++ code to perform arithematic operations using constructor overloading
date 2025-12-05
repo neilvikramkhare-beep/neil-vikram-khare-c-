@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+class overclass
+{
+    public:
+    int x;
+    int y;
+    int add;
+    overclass()
+    {
+        x=76;
+        y=56;
+    }
+    overclass(int a,int b)
+    {
+        x=a;
+        y=b;
+    }
+};
+int main()
+{
+    int add;
+    int sub;
+    int prod;
+    float div;
+    int mod;
+    overclass O;
+    overclass O1(54,27);
+     cout<<"Overclass O1 value:"<<O1.x;
+      cout<<"\nOverclass O2 value:"<<O1.y;
+      add=O1.x+O1.y;
+      cout<<"\nSum="<<add<<endl;
+      sub=O1.x-O1.y;
+      cout<<"\nSubstraction="<<sub<<endl;
+       div=O1.x/O1.y;
+      cout<<"\nDivision="<<div<<endl;
+ prod=O1.x*O1.y;
+      cout<<"\nMultiplication="<<prod<<endl;
+     mod=O1.x%O1.y;
+      cout<<"\nModulus="<<mod<<endl;
+      return 0;
+}
