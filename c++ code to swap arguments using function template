@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+template<class X>void swapargs(X&a,X&b)
+{
+    X temp;
+    temp=a;
+    a=b;
+    temp=b;
+}
+int main()
+{
+    int i=63;
+    int j=76;
+    double x=78.23;
+    double y=65.43;
+    char a='f';
+    char b='s';
+    cout<<"Original i and j:"<<i<<"-"<<j<<endl;
+     cout<<"Original x and y:"<<x<<"-"<<y<<endl;
+     cout<<"Original a and b:"<<a<<"-"<<b<<endl;
+     swapargs(i,j);
+     swapargs(x,y);
+     swapargs(a,b);
+     cout<<"Swapped i and j:"<<i<<"-"<<j<<endl;
+      cout<<"Swapped x and y:"<<x<<"-"<<y<<endl;
+       cout<<"Swapped a and b:"<<a<<"-"<<b<<endl;
+return 0;
+}
