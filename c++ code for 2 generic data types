@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+template<class A,class B>
+void myFunction(A a,B b)
+{
+    cout<<a<<"-"<<b<<endl;
+}
+int main()
+{
+    myFunction(78,"xchcb");
+    myFunction(65,"hgfdsd");
+    return 0;
+}
