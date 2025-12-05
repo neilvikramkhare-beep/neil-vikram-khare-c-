@@ -1,0 +1,40 @@
+
+#include <iostream>
+using namespace std;
+class employee
+{
+int ID;
+char name[50];
+int age;
+long salary;
+public:
+void getdata()
+{
+    cout<<"enter employee ID:";
+    cin>>ID;
+    cout<<"\nenter employee name:";
+    cin>>name;
+    cout<<"\nenter employee salary:";
+    cin>>salary;
+    cout<<"\nenter employee age:";
+    cin>>age;
+}
+void putdata()
+{
+    cout<<"\nID:"<<ID<<"\tName:"<<name<<"\tSalary:"<<salary<<"\tAge:"<<age<<endl;
+}
+};
+int main()
+{
+    int i;
+    employee e[5];
+    for(i=0;i<5;i++)
+    {
+        cout<<"Enter empoloyee details:\n"<<i+1;
+        e[i].getdata();
+    }
+    cout<<"\nemployee details:";
+    for(i=0;i<5;i++)
+    e[i].putdata();
+    return 0;
+}
