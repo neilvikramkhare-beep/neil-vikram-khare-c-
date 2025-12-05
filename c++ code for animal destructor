@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+class Animal
+{
+    public:
+   Animal()
+   {}
+   void display()
+   {
+       cout<<"Animal born.\n"<<endl;
+   }
+   ~Animal()
+   {
+       cout<<"Animal killed.";
+   }
+};
+int main()
+{
+    Animal a1;
+    a1.display();
+    return 0;
+}
