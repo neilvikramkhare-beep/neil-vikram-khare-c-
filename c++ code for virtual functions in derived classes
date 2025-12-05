@@ -1,0 +1,24 @@
+
+#include <iostream>
+using namespace std;
+class College
+{
+    public:
+    virtual void show()=0;
+};
+class Hospital:public College
+{
+    public:
+    void show()
+    {
+        cout<<"use of virtual functions in derived classes.\n";
+    }
+};
+int main()
+{
+    Hospital h; 
+   College* cptr; 
+    cptr = &h; 
+    cptr->show(); 
+    return 0;
+}
