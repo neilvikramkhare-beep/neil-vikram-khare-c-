@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+void sum(int a,int b,int c,int d,int e,int f,int j,int k,int m,int n)
+{
+    cout<<"Sum of integer values:"<<a+b+c+d+e+f+j+k+m+n;
+}
+void sum(float t,float y,float s, float u,float r)
+{
+    cout<<"\nSum of float values:"<<t+y+s+u+r;
+}
+int main()
+{
+    sum(65,43,49,76,34,87,54,98,24,68);
+    sum(76.7,45.8,76.2,89.09,47.4);
+    return 0;
+}
