@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+class grandfather
+{
+    string name;
+    int age;
+    public:
+    void getdata()
+    {
+        cout<<"\n enter the name of grandfather:";
+        cin>>name;
+        cout<<"\n enter the age of the grandfather:";
+        cin>>age;
+    }
+    void displaydata()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Age:"<<age<<endl;
+    }
+};
+class father:public grandfather
+{
+    string name;
+    int age;
+     public:
+    void getdata1()
+    {
+        cout<<"\n enter the name of father:";
+        cin>>name;
+        cout<<"\n enter the age of the father:";
+        cin>>age;
+    }
+    void displaydata1()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Age:"<<age<<endl;
+    }
+};
+class child:public grandfather
+{
+    string name;
+    int age;
+     public:
+    void getdata2()
+    {
+        cout<<"\n enter the name of child:";
+        cin>>name;
+        cout<<"\n enter the age of the child:";
+        cin>>age;
+    }
+    void displaydata2()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Age:"<<age<<endl;
+    }
+};
+int main()
+{
+    father f;
+    child c;
+    f.getdata1();
+    f.displaydata1();
+    c.getdata();
+    c.getdata2();
+    c.displaydata();
+    c.displaydata2();
+    return 0;
+}
