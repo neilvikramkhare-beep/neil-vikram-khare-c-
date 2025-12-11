@@ -1,0 +1,29 @@
+#include <iostream>
+#include<vector>
+#include<cctype>
+using namespace std;
+int main()
+{
+    vector<char>v(10);
+    unsigned int i;
+    string contents;
+    cout<<"Size:"<<v.size()<<endl;
+    for(int i=0;i<10;i++)
+        v[i]=i+'a';
+        cout<<"Current contents:\n";
+        for(int i=0;i<v.size();i++)
+            cout<<v[i]<<"";
+            cout<<"\n";
+        cout<<"Expanding vector:\n";
+        for(int i=0;i<10;i++)
+        v.push_back(i+10+'a');
+        cout<<"Size now="<<v.size()<<endl;
+         cout<<"Current contents:\n";
+         for(int i=0;i<v.size();i++)
+            cout<<v[i]<<"";
+            cout<<"\n";
+             cout<<"Modified contents:\n";
+              for(int i=0;i<v.size();i++)
+             cout<<v[i]<<"";
+             return 0;
+}
