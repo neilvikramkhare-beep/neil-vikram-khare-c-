@@ -1,0 +1,17 @@
+#include<iostream>
+#include<sstream>
+using namespace std;
+int main()
+{
+    string offc="bxshjhsd";
+    istringstream ff(offc);
+    ostringstream sf;
+    char ch;
+    while(ff.get(ch))
+    {
+        sf.put(ch);
+    }
+    cout<<"contents copied to second file:\n";
+    cout<<sf.str()<<endl;
+    return
+}
