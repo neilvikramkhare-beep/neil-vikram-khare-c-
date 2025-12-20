@@ -1,7 +1,7 @@
-#include <iostream> 
-#include <string> 
-#include <cstdlib> 
-using namespace std; 
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
 class College 
 {
 public:
@@ -10,7 +10,8 @@ public:
     string post;
     int salary;
     string DOJ;
-    College(string n, int a, string p, int s, string doj) {
+    College(string n, int a, string p, int s, string doj)
+    {
         name = n;
         age = a;
         post = p;
@@ -29,79 +30,100 @@ public:
         country = cntry;
     }
 };
-class EmployeeDetails 
+class EmployeeDetails
 {
 public:
     College collegeInfo;
     Location locationInfo;
-    EmployeeDetails(College c, Location l) : collegeInfo(c), locationInfo(l) {}
+    EmployeeDetails(College c, Location l) : collegeInfo(c), locationInfo(l) 
+    {}
     void printCombinedDetails() 
     {
-        cout << collegeInfo.name << "|" << collegeInfo.age << "|" << collegeInfo.post << "|" << collegeInfo.salary << "|" << collegeInfo.DOJ << "|" << locationInfo.city << "|" << locationInfo.country << "|" << endl;
+        cout << collegeInfo.name << " | " << collegeInfo.age << " | " 
+             << collegeInfo.post << " | " << collegeInfo.salary << " | " 
+            << collegeInfo.DOJ << " | " << locationInfo.city << " | " 
+             << locationInfo.country << endl;
     }
 };
-void callPythonSubprogram() 
+void callPythonSubprogram()
 {
-    cout << "\nCalling external Python script using system() call" << endl;
-    int systemResult = system("python external_script.py"); 
-    if (systemResult == 0) 
+    cout << "\nCalling external Python script using system() call." << endl;
+    int systemResult = system("python external_script.py");
+    if (systemResult == 0)
     {
         cout << "Python script executed successfully." << endl;
     } 
-    else 
+    else
     {
-        cerr << "Failed to execute Python script. Error code: " << systemResult << endl;
+        cerr << "Failed to execute Python script or script not found." << endl;
     }
 }
 void callJavaSubprogram() 
 {
-    cout << "\nCalling external Java script using system() call" << endl;
-    int systemResult = system("java external_script.java"); 
+    cout << "\nCalling external Java script using system() call..." << endl;
+    int systemResult = system("java external_script.java");
     if (systemResult == 0) 
     {
         cout << "Java script executed successfully." << endl;
     } 
-    else 
+    else
     {
-        cerr << "Failed to execute Java script. Error code: " << systemResult << endl;
+        cerr << "Failed to execute Java script or script not found." << endl;
     }
-};
-int main() 
+}
+void callSQLSubprogram() 
 {
-    char isAuthorized = true;
-    if (isAuthorized) 
+    cout << "\nCalling external SQL script using system() call..." << endl;
+    int systemResult = system("SQL external_script.java");
+    if (systemResult == 0) 
+    {
+        cout << "Java script executed successfully." << endl;
+    } 
+    else
+    {
+        cerr << "Failed to execute SQL script or script not found." << endl;
+    }
+}
+int main()
+{
+    bool isAuthorized = true;
+    if (isAuthorized)
     {
         cout << "Access Granted. Displaying Employee Details:" << endl;
-        College collegeData[] = { 
-            College("Suyash", 43, "Admin", 45000, "Monday"), 
-            College("Amit", 54, "Supervisor", 68000, "Wednesday"), College("Pravin", 45, "Staff", 32000, "Saturday"), College("Rahul", 32, "Manager", 80000, "Tuesday"),
-            College("Amey", 46, "Synchronizer", 64000, "Thursday"), 
-            College("Aditya", 62, "HOD", 90000, "Monday"), 
-            College("Shyama", 20, "Clerk", 29000, "Friday"), 
-            College("Farida", 29, "Advisor", 26000, "Wednesday"), College("Mrunal", 72, "Query", 10000, "Thursday"), College("Ragini", 38, "Database", 83000, "Saturday") };
-        Location locationData[] = { 
-            Location("Pune", "India"), 
-            Location("Mumbai", "India"), 
-            Location("Nagpur", "India"), 
-            Location("Delhi", "India"), 
+        cout << "Name | Age | Post | Salary | DOJ | City | Country" << endl;
+        College collegeData[] = {
+            College("Suyash", 43, "Admin", 45000, "Monday"),
+            College("Amit", 54, "Supervisor", 68000, "Wednesday"),
+            College("Pravin", 45, "Staff", 32000, "Saturday"),
+            College("Rahul", 32, "Manager", 80000, "Tuesday"),
+            College("Amey", 46, "Synchronizer", 64000, "Thursday"),
+            College("Aditya", 62, "HOD", 90000, "Monday"),
+            College("Shyama", 20, "Clerk", 29000, "Friday"),
+            College("Farida", 29, "Advisor", 26000, "Wednesday"),
+            College("Mrunal", 72, "Query", 10000, "Thursday"),
+            College("Ragini", 38, "Database", 83000, "Saturday")
+        };
+        Location locationData[] = {
+            Location("Pune", "India"),
+            Location("Mumbai", "India"),
+            Location("Nagpur", "India"),
+            Location("Delhi", "India"),
             Location("Bangalore", "India"),
-            Location("Chennai", "India"), 
-            Location("Kolkata", "India"), 
+            Location("Chennai", "India"),
+            Location("Kolkata", "India"),
             Location("Hyderabad", "India"),
             Location("Ahmedabad", "India"),
             Location("Jaipur", "India")
         };
         const int NUM_EMPLOYEES = 10;
-        EmployeeDetails combinedDetails[NUM_EMPLOYEES] = { EmployeeDetails(collegeData[0], locationData[0]), EmployeeDetails(collegeData[1], locationData[1]), EmployeeDetails(collegeData[2], locationData[2]), EmployeeDetails(collegeData[3], locationData[3]), EmployeeDetails(collegeData[4], locationData[4]), EmployeeDetails(collegeData[5], locationData[5]), EmployeeDetails(collegeData[6], locationData[6]), EmployeeDetails(collegeData[7], locationData[7]), EmployeeDetails(collegeData[8], locationData[8]), EmployeeDetails(collegeData[9], locationData[9])
-        };
-        for (int i = 0; i < NUM_EMPLOYEES; i++)
+        for (int i = 0; i < NUM_EMPLOYEES; i++) 
         {
-            combinedDetails[i].printCombinedDetails();
+            EmployeeDetails emp(collegeData[i], locationData[i]);
+            emp.printCombinedDetails();
         }
-        callPythonSubprogram(); 
-        {
-            callJavaSubprogram();
-        }
+        callPythonSubprogram();
+        callJavaSubprogram();
+        callSQLSubprogram();
     } 
     else 
     {
