@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class Book
+{
+    public:
+    string title;
+    string author;
+    Book(string t, string a)
+    {
+        title=t;
+        author=a;
+    }
+    void displaydata()
+    {
+        cout<<"Title:"<<title<<endl;
+        cout<<"Author:"<<author<<endl;
+    }
+};
+int main()
+{
+    Book b1("Mrutyunjay","Shivaji Sawant");
+    Book b2("Mahabharat","Ved Vyas");
+    cout<<"Displaying book details:"<<endl;
+    b1.displaydata();
+    b2.displaydata();
+    return 0;
+}
