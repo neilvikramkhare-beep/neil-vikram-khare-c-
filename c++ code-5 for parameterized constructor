@@ -1,0 +1,24 @@
+#include <iostream> 
+using namespace std; 
+class employee
+{ 
+public: 
+    int ID; 
+    int salary;
+    employee(int id,int s)
+    { 
+       ID=id;
+       salary=s;
+    } 
+    void displaydata() 
+    { 
+        cout << "ID:" <<ID<< endl; 
+        cout<<"Salary:"<<salary<<endl;
+    } 
+}; 
+int main() 
+{
+    employee e(67, 98000); 
+    e.displaydata(); 
+    return 0; 
+}
