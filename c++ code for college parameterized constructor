@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class college
+{
+    public:
+    string name;
+    string post;
+    int roll;
+    college(int r, string n, string p)
+    {
+        name=n;
+        roll=r;
+        post=p;
+    }
+    void displaydata()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Roll number:"<<roll<<endl;
+        cout<<"Post:"<<post<<endl;
+    }
+};
+int main()
+{
+    college member1(76,"Rahul","Administrator");
+    college member2(12,"Ramesh","Staff");
+    cout<<"Displaying data of members:"<<endl;
+    member1.displaydata();
+    member2.displaydata();
+    return 0;
+}
