@@ -1,0 +1,84 @@
+#include <iostream>
+using namespace std;
+class clinic
+{
+    string name;
+    int age;
+    string qualification;
+public:
+    void getdata()
+    {
+        cout << "\nEnter the name: ";
+        cin >> name;
+        cout << "Enter the age of the staff: ";
+        cin >> age;
+        cout<<"Enter the staff's qualification:";
+        cin>>qualification;
+    }
+    void display()
+    {
+        cout << "\nName: " << name << endl;
+        cout << "\tAge: " << age << endl;
+        cout<<"\tQualification:"<<qualification<<endl;
+    }
+};
+class employee : public clinic
+{
+    string designation;
+    string degree;
+public:
+    void getdata1()
+    {
+        cout << "\nEnter designation of the employee: ";
+        cin >> designation;
+        cout<<"Enter the degree of the staff:";
+        cin>>degree;
+    }
+    void display2()
+    {
+        cout << "\nDesignation: " << designation << endl;
+        cout << "\tDegree: " << degree << endl;
+    }
+};
+class location : public employee
+{
+    string city;
+    string country;
+    string taluka;
+    int pincode;
+public:
+    void getdata2()
+    {
+        cout << "\nEnter city name: ";
+        cin >> city;
+        cout << "\nEnter country name: ";
+        cin >> country;
+        cout << "\nEnter taluka name: ";
+        cin >> taluka;
+        cout << "\nEnter the pincode: ";
+        cin >> pincode;
+    }
+    void display3()
+    {
+        cout << "\nCity: " << city << endl;
+        cout << "\tCountry: " << country << endl;
+        cout << "\tTaluka: " << taluka << endl;
+        cout << "\tPincode: " << pincode << endl;
+    }
+};
+int main()
+{
+    location l;
+     for(int i=0;i<5;i++)
+    l.getdata();  
+    for(int i=0;i<5;i++)
+    l.getdata1(); 
+     for(int i=0;i<5;i++)
+    l.getdata2();  
+     for(int i=0;i<5;i++)
+    cout << "\n Clinic Details:" << endl;
+    l.display();  
+    l.display2(); 
+    l.display3();  
+    return 0;
+}
