@@ -17,9 +17,7 @@ public:
     }
     void display()
     {
-        cout << "\nName: " << name << endl;
-        cout << "\tAge: " << age << endl;
-        cout<<"\tQualification:"<<qualification<<endl;
+        cout << "\nName|" << name <<"\tAge|" << age << "\tQualification|"<<qualification<<endl;
     }
 };
 class employee : public clinic
@@ -34,10 +32,9 @@ public:
         cout<<"Enter the degree of the staff:";
         cin>>degree;
     }
-    void display2()
+    void display1()
     {
-        cout << "\nDesignation: " << designation << endl;
-        cout << "\tDegree: " << degree << endl;
+        cout << "\nDesignation| " << designation << "\tDegree| " << degree<<endl;
     }
 };
 class location : public employee
@@ -58,12 +55,9 @@ public:
         cout << "\nEnter the pincode: ";
         cin >> pincode;
     }
-    void display3()
+    void display2()
     {
-        cout << "\nCity: " << city << endl;
-        cout << "\tCountry: " << country << endl;
-        cout << "\tTaluka: " << taluka << endl;
-        cout << "\tPincode: " << pincode << endl;
+        cout << "\nCity| " << city << "\tCountry| " << country<< "\tTaluka| " << taluka << "\tPincode| " << pincode << endl;
     }
 };
 int main()
@@ -77,8 +71,11 @@ int main()
     l.getdata2();  
      for(int i=0;i<5;i++)
     cout << "\n Clinic Details:" << endl;
+     for(int i=0;i<5;i++)
     l.display();  
-    l.display2(); 
-    l.display3();  
+     for(int i=0;i<5;i++)
+    l.display1(); 
+     for(int i=0;i<5;i++)
+    l.display2();  
     return 0;
 }
