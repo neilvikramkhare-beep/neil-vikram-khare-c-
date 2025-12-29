@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() 
+{
+vector<int> myVector = {1, 2, 3, 4, 5};
+    int scalar = 3;
+    cout << "Original vector: ";
+    for (int val : myVector) 
+    {
+        cout << val << " ";
+    }
+    cout << std::endl;
+    for (size_t i = 0; i < myVector.size(); ++i)
+     {
+        myVector[i] *= scalar; 
+    }
+    cout << "Vector after scalar multiplication: ";
+    for (int val : myVector)
+     {
+        cout << val << " ";
+    }
+    cout <<endl;
+    return 0;
+}
