@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+class Number 
+{
+public:
+    int n;
+    Number(int n = 0)
+    {
+        this->n=n;
+    }
+    friend void operator++(Number&N) {
+    N.n = N.n + 1;
+    }
+    friend Number operator++(Number&N, int) 
+    { 
+        Number temp(N.n); 
+        N.n =N.n + 1;  
+        return temp;    
+    }
+    void display() 
+    {
+        cout << n;
+    }
+};
+int main() 
+{
+    int x = 5;
+    Number N(x);
+    cout << "Original value:";
+    N.display();
+    ++N; 
+    cout << "\nAfter pre-incrementation:";
+    N.display();
+    N++; 
+    cout << "\nAfter post-incrementation:";
+    N.display();
+    return 0;
+}
