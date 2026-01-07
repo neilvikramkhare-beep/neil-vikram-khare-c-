@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class Game
+{
+    public:
+    int players;
+    string captain;
+    int size;
+    void getdata()
+    {
+        cout<<"Enter the number of players:";
+        cin>>players;
+        cout<<"Enter the name of captain:";
+        cin>>captain;
+        cout<<"Enter the size of ground:";
+        cin>>size;
+    }
+    void putdata()
+    {
+        cout<<"\nNumber of players:"<<players;
+        cout<<"\nName of captain:"<<captain;
+        cout<<"\nSize of ground:"<<size;
+    }
+};
+class Location:public Game
+{
+    public:
+    string name;
+    string city;
+    string country;
+    string taluka;
+    void getdata1()
+    {
+        cout<<"Enter the name of location:";
+        cin>>name;
+        cout<<"Enter the name of city:";
+        cin>>city;
+        cout<<"Enter the name of country:";
+        cin>>country;
+        cout<<"Enter the name of taluka:";
+        cin>>taluka;
+    }
+    void putdata1()
+    {
+        cout<<"\nName of the location:"<<name;
+        cout<<"\nName of the city:"<<city;
+        cout<<"\nName of the country:"<<country;
+        cout<<"\nName of the taluka:"<<taluka;
+    }
+};
+int main()
+{
+    Game g;
+    Location l;
+    cout<<"Entering data of game and location:\n";
+    g.getdata();
+    l.getdata1();
+    cout<<"\nDisplaying data of game and location:\n";
+    g.putdata();
+    l.putdata1();
+    return 0;
+}
