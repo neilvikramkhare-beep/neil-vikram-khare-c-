@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+int main() 
+{
+    long long n;
+    int count = 0;
+    cout << "Enter an number: ";
+    cin >> n;
+    if(n == 0) 
+    {
+        count = 1;
+    } 
+    else 
+    {
+        for (long long i = abs(n); i != 0; i /= 10)
+        {
+            count++;
+        }
+    }
+    cout << "The number of digits in " << n << " is: " << count << endl;
+    return 0;
+}
