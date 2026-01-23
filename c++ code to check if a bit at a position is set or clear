@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+bool isBitSet(int number, int n)
+{
+    return (number & (1 << n)) != 0;
+}
+int main() 
+{
+    int num = 42; 
+    int position = 3; 
+    if (isBitSet(num, position))
+    {
+    cout << "The bit at position " << position << " is set (1)." << endl;
+    }
+    else 
+    {
+       cout << "The bit at position " << position << " is clear (0)." << endl;
+    }
+    int positionnotset = 2; 
+    if (isBitSet(num, positionnotset))
+    {
+cout << "The bit at position " << positionnotset << " is set (1)." << endl;
+    } 
+    else 
+    {
+        cout << "The bit at position " << positionnotset << " is clear (0)." <<endl;
+    }
+    return 0;
+}
