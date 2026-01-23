@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+long long factorial(int n)
+{
+    long long fact = 1;
+    for (int i = 1; i <= n; ++i) 
+    {
+        fact *= i;
+    }
+    return fact;
+}
+int countDigits(long long num) 
+{
+    if (num == 0) return 1;
+    int count = 0;
+    while (num != 0)
+    {
+        num /= 10;
+        count++;
+    }
+    return count;
+}
+int main() 
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    if (n < 0) 
+    {
+       cout << "Invalid input." << endl;
+    } 
+    else 
+    {
+        long long fact = factorial(n);
+        int digits = countDigits(fact);
+       cout << "Factorial of " << n << " is: " << fact << endl;
+       cout << "Number of digits: " << digits << endl;
+    }
+    return 0;
+}
