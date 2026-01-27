@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+   int n,i;
+   int a=0;
+   int b=1;
+   int c=a+b;
+cout << "Enter the number of fibonacci numbers to generate:";
+cin>>n;
+for(i=1;i<n;i++)
+{
+    a=b;
+    b=c;
+    c=a+b;
+}
+cout<<"Sum of terms in the fibonacci series:"<<c;
+    return 0;
+}
