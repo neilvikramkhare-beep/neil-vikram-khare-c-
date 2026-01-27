@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+   int n,i;
+   int a=0;
+   int b=1;
+   int c;
+cout << "Enter the number of fibonacci numbers to generate:";
+cin>>n;
+cout<<"Fibonacci series:";
+if(n<=0)
+{
+    cout<<"Enter a positive integer.";
+}
+else if(n==1)
+{
+    cout<<a;
+}
+else
+{
+   cout<<a<<b;
+   for(i=3;i<n;++i)
+   {
+       c=a+b;
+       a=b;
+       b=c;
+       cout<<c;
+   }
+}
+cout<<endl;
+    return 0;
+}
