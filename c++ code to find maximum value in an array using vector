@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int max(vector<int>& a)
+{
+    int n = a.size();
+    int maxVal = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i+1; j < n; j++) 
+        {
+            maxVal = max(maxVal, a[i] & a[j]);
+        }
+    }
+    return maxVal;
+}
+int main()
+{
+    vector<int> a = {14, 81, 123, 26};
+    cout << "Maximum  value: " << max(a) << endl;
+    return 0;
+}
