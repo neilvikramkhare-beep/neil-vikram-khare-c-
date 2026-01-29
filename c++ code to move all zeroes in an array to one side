@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+void moveZeroes(vector<int>& num) 
+{
+    int nonZeroIndex = 0;
+    for (int i = 0; i < num.size(); ++i)
+    {
+        if (num[i] != 0) {
+            swap(num[i], num[nonZeroIndex]);
+            nonZeroIndex++; 
+        }
+    }
+}
+int main()
+{
+    vector<int> a = {0, 1, 0, 3, 12};
+    cout << "Original array 1: ";
+    for (int x : a) 
+    { 
+        cout << x << " ";
+    }
+    cout << endl;
+    moveZeroes(a);
+cout << "Array 1 after moving zeroes: ";
+    for (int x : a) 
+    { 
+       cout << x << " ";
+        }
+  cout <<endl;
+    return 0;
+}
