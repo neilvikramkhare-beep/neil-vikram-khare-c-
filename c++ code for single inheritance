@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Car 
+{
+public:
+    string color = "Red";
+    string name;
+    Car(string n) : name(n) {} 
+    void start() 
+    {
+        cout << name << " has been started." << endl;
+    }
+    void stop()
+    {
+        cout << name << " has been stopped." << endl;
+    }
+};
+class Toyota : public Car
+{
+public:
+    Toyota(string n) : Car(n)
+  {}
+     void putname()
+    {
+        cout <<"The name of the car is:" << name<<endl;
+    }
+};
+int main()
+{
+    Toyota t1("Fortuner");
+    Toyota t2("Rapido");
+    cout << t1.name << " color: " << t1.color << endl;
+    cout << t2.name << " color: " << t2.color << endl;
+    t1.putname();
+    t1.start();
+    t1.stop();
+    t2.start();
+    t2.stop();
+    return 0;
+}
