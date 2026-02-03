@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+void findLeaders(const vector<int>&a) 
+{
+    if (a.empty()) 
+    {
+        return;
+    }
+    int n = a.size();
+    int MaxFromRight = a[n - 1];
+    cout << "The leaders in the array are: " <<endl;
+    cout << MaxFromRight<<endl;
+    for (int i = n - 2; i >= 0; --i) {
+        if (a[i] >MaxFromRight)
+            MaxFromRight = a[i];
+    cout << MaxFromRight <<endl;
+        }
+    }
+int main() 
+{
+    vector<int> a1 = {16, 17, 4, 3, 5, 2};
+    cout << "For array: {16, 17, 4, 3, 5, 2}" <<endl;
+    findLeaders(a1);
+    cout <<endl;
+    vector<int> a2 = {1, 2, 3, 4, 5, 2};
+    cout << "For array: {1, 2, 3, 4, 5, 2}" <<endl;
+    findLeaders(a2);
+    return 0;
+}
