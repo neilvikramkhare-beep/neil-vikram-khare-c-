@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+int main() 
+{
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    if (number < 0)
+    {
+     cout << "Square root is not defined for negative numbers." << endl;
+        return 1;
+    }
+    double squareRoot = sqrt(number);
+    if (squareRoot == static_cast<int>(squareRoot))
+    {
+        cout << number << " is a perfect square." << endl;
+        cout << "The perfect square root is: " << static_cast<int>(squareRoot) << endl;
+    } 
+    else
+    {
+       cout << number << " is not a perfect square." <<endl;
+        cout << "The approximate square root is: " << squareRoot <<endl;
+    }
+    return 0;
+}
