@@ -24,8 +24,5 @@ int main()
     cout << "For array: {16, 17, 4, 3, 5, 2}" <<endl;
     findLeaders(a1);
     cout <<endl;
-    vector<int> a2 = {1, 2, 3, 4, 5, 2};
-    cout << "For array: {1, 2, 3, 4, 5, 2}" <<endl;
-    findLeaders(a2);
     return 0;
 }
