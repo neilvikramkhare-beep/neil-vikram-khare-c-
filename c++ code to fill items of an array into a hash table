@@ -1,33 +1,33 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int hashFunction(int key, int tableSize) {
-    return key % tableSize;
+int hashFunction(int key, int size) {
+    return key % size;
 }
-void insert(vector<int>& hashTable, int value, int tableSize) {
-    int hashIndex = hashFunction(value, tableSize);
+void insert(vector<int>& hashTable, int value, int size) {
+    int hashIndex = hashFunction(value, size);
     while (hashTable[hashIndex] != -1) {
-        hashIndex = hashFunction(hashIndex + 1, tableSize);
+        hashIndex = hashFunction(hashIndex + 1, size);
     }
     hashTable[hashIndex] = value;
 }
-void fillHashTable(vector<int>& hashTable, const vector<int>& dataArray, int tableSize) {
+void fillHashTable(vector<int>& hashTable, const vector<int>& dataArray, int size) {
     for (int value : dataArray) {
-        insert(hashTable, value, tableSize);
+        insert(hashTable, value, size);
     }
 }
-void printHashTable(const vector<int>& hashTable, int tableSize) {
-    for (int i = 0; i < tableSize; ++i) {
+void printHashTable(const vector<int>& hashTable, int size) {
+    for (int i = 0; i < size; ++i) {
         cout << "hashTable[" << i << "] = " << hashTable[i] << endl;
     }
 }
 int main() 
 {
     vector<int> dataArray = {10, 4, 2, 30, 12, 17};
-    const int TABLE_SIZE = 7; 
-    vector<int> hashTable(TABLE_SIZE, -1);
-    fillHashTable(hashTable, dataArray, TABLE_SIZE);
+    const int SIZE = 7; 
+    vector<int> hashTable(SIZE, -1);
+    fillHashTable(hashTable, dataArray, SIZE);
     cout << "Hash Table after filling:" << endl;
-    printHashTable(hashTable, TABLE_SIZE);
+    printHashTable(hashTable, SIZE);
     return 0;
 }
