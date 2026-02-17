@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int hashFunction(int key, int tableSize) {
+    return key % tableSize;
+}
+void insert(vector<int>& hashTable, int value, int tableSize) {
+    int hashIndex = hashFunction(value, tableSize);
+    while (hashTable[hashIndex] != -1) {
+        hashIndex = hashFunction(hashIndex + 1, tableSize);
+    }
+    hashTable[hashIndex] = value;
+}
+void fillHashTable(vector<int>& hashTable, const vector<int>& dataArray, int tableSize) {
+    for (int value : dataArray) {
+        insert(hashTable, value, tableSize);
+    }
+}
+void printHashTable(const vector<int>& hashTable, int tableSize) {
+    for (int i = 0; i < tableSize; ++i) {
+        cout << "hashTable[" << i << "] = " << hashTable[i] << endl;
+    }
+}
+int main() 
+{
+    vector<int> dataArray = {10, 4, 2, 30, 12, 17};
+    const int TABLE_SIZE = 7; 
+    vector<int> hashTable(TABLE_SIZE, -1);
+    fillHashTable(hashTable, dataArray, TABLE_SIZE);
+    cout << "Hash Table after filling:" << endl;
+    printHashTable(hashTable, TABLE_SIZE);
+    return 0;
+}
