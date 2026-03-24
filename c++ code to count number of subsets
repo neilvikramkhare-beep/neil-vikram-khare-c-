@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int countSubsets(const vector<int>& arr, int n, int target)
+{
+    if (target == 0) 
+    return 1;
+    if (n == 0) 
+    return 0;
+    if (arr[n - 1] > target)
+    {
+        return countSubsets(arr, n - 1, target);
+    }
+    return countSubsets(arr, n - 1, target - arr[n - 1]) + 
+           countSubsets(arr, n - 1, target);
+}
+int main() 
+{
+    vector<int> v = {1, 2, 3, 4, 5};
+    int target = 3;
+    cout << "Count = " << countSubsets(v, v.size(), target) << endl;
+    return 0;
+}
