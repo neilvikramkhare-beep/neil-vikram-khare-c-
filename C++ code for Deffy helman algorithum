@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+long long int power(long long int base, long long int exp, long long int mod) {
+    long long int res = 1;
+    base = base % mod;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            res = (res * base) % mod;
+        }
+        base = (base * base) % mod;
+        exp = exp / 2;
+    }
+    return res;
+}
+int main() {
+    long long int P = 23; 
+    long long int G = 5; 
+    cout << "Publicly shared Prime (P): " << P << "\n";
+    cout << "Publicly shared Generator (G): " << G << "\n\n";
+    long long int a = 6; 
+    long long int A = power(G, a, P); 
+    cout << "Alice's Private Key (a): " << a << "\n";
+    cout << "Alice's Public Key (A): " << A << "\n\n";
+    long long int b = 15; 
+    long long int B = power(G, b, P); 
+    cout << "Bob's Private Key (b): " << b << "\n";
+    cout << "Bob's Public Key (B): " << B << "\n\n";
+    long long int secretKeyAlice = power(B, a, P); 
+    long long int secretKeyBob = power(A, b, P);   
+    cout<<"Secret Key calculated by Alice:"<<secretKeyAlice << "\n";
+    cout << "Secret Key calculated by Bob: " << secretKeyBob << "\n";
+    return 0;
+}
